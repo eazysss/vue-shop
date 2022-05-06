@@ -20,13 +20,11 @@
           :collapse="isCollapse"
           :collapse-transition="false"
           router
-          :default-active="activePath"
-        >
+          :default-active="activePath">
           <el-submenu
             :index="String(item.id)"
             v-for="item in menulist"
-            :key="item.id"
-          >
+            :key="item.id">
             <template slot="title">
               <i :class="iconObj[item.id]"></i>
               <span>{{ item.authName }}</span>
@@ -37,8 +35,7 @@
               :index="'/' + subItem.path"
               v-for="subItem in item.children"
               :key="subItem.id"
-              @click="saveNavState('/' + subItem.path)"
-            >
+              @click="saveNavState('/' + subItem.path)">
               <template slot="title">
                 <i class="el-icon-menu"></i>
                 <span>{{ subItem.authName }}</span>
